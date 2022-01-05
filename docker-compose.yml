@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  cinema-api:
+    build: .
+    container_name: cinemas-api
+    ports:
+      - 80:8090
+    networks:
+      - net-cinema
+    depends_on:
+      - cinemas-db
+
+  db:
+    image: mongo
+    container_name: cinemas-db
+    ports:
+      - 27017:27017
+    volumes:
+      - db-cinemas:/data/db
+    networks:
+      - net-cinema
+networks:
+  net-cinema:
+volumes:
+  db-cinemas:
