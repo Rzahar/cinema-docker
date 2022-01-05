@@ -6,5 +6,5 @@ RUN mvn package
 FROM openjdk:11
 WORKDIR /app
 COPY --from=build /app/target/ApiCinema-0.0.1-SNAPSHOT.jar ./app.jar
-EXPOSE 8090
+EXPOSE 90
 CMD ["java","-jar","app.jar"]
