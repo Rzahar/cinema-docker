@@ -1,0 +1,9 @@
+name : Test Action github
+on: [push]
+jobs:
+  Test-first-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Je teste"
+      - name: Je liste mes fichiers ?
+        run : ls
